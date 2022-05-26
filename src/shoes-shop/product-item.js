@@ -5,11 +5,12 @@ export default class ProductItem extends Component {
     //bóc tách product được product-list truyền qua
     const { product } = this.props;
     return (
-      <div className="col-md-4 card" style={{ width: "18rem" }}>
+      <div className="col-md-4 card" style={{ width: "18rem", border: "none" }}>
         <button
           onClick={() => this.props.getDetailProduct(product)}
           data-toggle="modal"
           data-target=".bd-example-modal-lg"
+          style={{ border: "none" }}
         >
           <img
             className="card-img-top"
@@ -21,8 +22,8 @@ export default class ProductItem extends Component {
           <h5 className="card-title">{product.name}</h5>
           <p className="card-text">{product.price} $</p>
           <a href="#" className="btn btn-dark">
-            add to carts
-            <i className="fas fa-cart-plus" />
+            Add to carts
+            <i className="fas fa-cart-plus ml-2" />
           </a>
         </div>
       </div>

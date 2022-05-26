@@ -14,7 +14,7 @@ export default class Modal extends Component {
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Chi tiết sản phẩm</h5>
+              <h4 className="modal-title font-weight-bold">Details</h4>
               <button
                 type="button"
                 className="close"
@@ -24,22 +24,35 @@ export default class Modal extends Component {
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div className="card flex-row" style={{ maxWidth: "500px" }}>
-              <img
-                className="card-img-top"
-                src={product.image}
-                alt={product.name}
-              />
-              <div className="card-body">
-                <p className="card-text">
-                  Tên: {product.name}
-                  <br />
-                  Giá: {product.price}
-                  <br />
-                  Mô tả: {product.description}
-                  <br />
-                  Số lượng: {product.quantity}
-                </p>
+            <div className="row">
+              <div className="col-sm-7">
+                <img
+                  style={{ width: "100%" }}
+                  src={product.image}
+                  alt={product.alias}
+                />
+              </div>
+              <div className="col-sm-5">
+                <table className="table font-weight-bold">
+                  <tbody>
+                    <tr>
+                      <td style={{ border: "none" }}>Name:</td>
+                      <td style={{ border: "none" }}> {product.name}</td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td> {product.price}</td>
+                    </tr>
+                    <tr>
+                      <td>Description:</td>
+                      <td> {product.description}</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: "100px" }}>Quantity:</td>
+                      <td> {product.quantity}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
