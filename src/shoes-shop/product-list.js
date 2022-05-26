@@ -3,7 +3,13 @@ import ProductItem from "./product-item";
 export default class ProductList extends Component {
   renderProductList = () => {
     return this.props.dataProduct.map((item) => {
-      return <ProductItem key={item.id} product={item} />;
+      return (
+        <ProductItem
+          key={item.id}
+          product={item}
+          getDetailProduct={this.props.getDetailProduct}
+        />
+      );
     });
   };
 

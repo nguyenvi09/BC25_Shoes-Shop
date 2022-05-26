@@ -6,11 +6,17 @@ export default class ProductItem extends Component {
     const { product } = this.props;
     return (
       <div className="col-md-4 card" style={{ width: "18rem" }}>
-        <img
-          className="card-img-top"
-          src={product.image}
-          alt="Card image cap"
-        />
+        <button
+          onClick={() => this.props.getDetailProduct(product)}
+          data-toggle="modal"
+          data-target=".bd-example-modal-lg"
+        >
+          <img
+            className="card-img-top"
+            src={product.image}
+            alt="Card image cap"
+          />
+        </button>
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
           <p className="card-text">{product.price} $</p>
